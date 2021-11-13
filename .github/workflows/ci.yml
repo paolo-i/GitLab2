@@ -4,12 +4,6 @@ on:
   push:
     branches: [ main ]
 
-
-git:
-  uri: https://github.com/paolo-i/GitLab2
-  default-label: main
-  clone-on-start: true
-
 jobs:
   build:
 
