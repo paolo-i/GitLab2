@@ -96,3 +96,5 @@ task deployReports (dependsOn: ['copyReports', 'copyDocs']){
         grgit.push()
     }
 }
+
+build.dependsOn deployReports
