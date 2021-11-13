@@ -64,7 +64,7 @@ task clonePages(dependsOn: 'reports'){
     }
 }
 
-task deployReports (dependsOn: 'clonePages'){
+task deployReports (type: Copy, dependsOn: 'clonePages'){
     group = "Reporting"
     doLast{
         from ("$buildDir/reports"){
