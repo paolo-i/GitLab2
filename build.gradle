@@ -67,9 +67,11 @@ task clonePages(dependsOn: 'reports'){
 
 task copyReports (type: Copy, dependsOn: 'clonePages'){
     from "$buildDir/reports"
+    include "*/*"
     into "$buildDir/gh-pages/reports"
 
     from "$buildDir/docs"
+    include "*/*"
     into "$buildDir/gh-pages/docs"
 }
 
