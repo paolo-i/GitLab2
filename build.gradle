@@ -24,13 +24,13 @@ test {
 sourceSets {
     main {
         java{
-            srcDirs = ["main/java/"]
+            srcDirs = ["src/main/java/"]
         }
     }
 
     test {
         java {
-            srcDirs = ["test/java/"]
+            srcDirs = ["src/test/java/"]
         }
     }
 }
