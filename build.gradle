@@ -80,7 +80,7 @@ task deployReports (dependsOn: 'copyReports'){
         def grgit = git.open {
             dir = pagesDir + "/.git"
         }
-        grgit.add (update: true, patterns: ['docs/'])
-        grgit.add (update: true, patterns: ['reports/'])
+        grgit.add (update: true, patterns: ['build/docs/'])
+        grgit.add (update: true, patterns: ['build/reports/'])
     }
 }
