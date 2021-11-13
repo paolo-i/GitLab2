@@ -77,7 +77,7 @@ task copyReports (type: Copy, dependsOn: 'clonePages'){
     into "$buildDir/gh-pages/docs"
 }
 
-task deployReports (dependsOn: ['copyReports', 'copyDocs']){
+task deployReports (dependsOn: 'copyReports'){
     group = "Reporting"
     doLast{
         def pagesDir = "$buildDir/gh-pages"
