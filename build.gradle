@@ -1,5 +1,8 @@
 plugins {
    id 'java'
+   id 'project-report'
+   id "org.xbib.gradle.plugin.git" version "2.0.0"
+
 }
 
 java {
@@ -12,11 +15,11 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.7.0' 
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.7.0'
     testImplementation 'org.hamcrest:hamcrest-library:2.2'
 }
 
-test {  
+test {
     ignoreFailures = true
     useJUnitPlatform()
 }
@@ -33,4 +36,14 @@ sourceSets {
             srcDirs = ["src/test/java/"]
         }
     }
+}
+
+task reports(){
+    dependsOn javadoc
+    dependsOn test
+}
+
+task deployReports(type: Copy){
+    dpendsOn reports
+
 }
