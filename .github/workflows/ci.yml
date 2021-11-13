@@ -16,6 +16,9 @@ jobs:
       with:
         java-version: '11'
         distribution: 'adopt'
+    - name: get gh-pages branch
+
+      run: git clone -b gh-pages https://github.com/CS350-Fall-2021/Phase-2
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build and test
