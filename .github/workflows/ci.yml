@@ -5,13 +5,10 @@ on:
     branches: [ main ]
 
 
-cloud:
-  config:
-    server:
-      git:
-        uri: https://github.com/paolo-i/GitLab2
-        default-label: main
-        clone-on-start: true
+git:
+  uri: https://github.com/paolo-i/GitLab2
+  default-label: main
+  clone-on-start: true
 
 jobs:
   build:
