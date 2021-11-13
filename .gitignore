@@ -1,4 +1,9 @@
 .vscode
 .gradle
-.project
+*.project
+*.class
+*.jar
+*.classpath
+*.prefs
+bin
 build/
