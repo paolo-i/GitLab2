@@ -90,5 +90,8 @@ task deployReports (dependsOn: ['copyReports', 'copyDocs']){
         grgit.add (update: true, patterns: ['reports/'])
         grgit.add (update: false, patterns: ['docs/'])
         grgit.add (update: true, patterns: ['docs/'])
+        grgit.commit{
+            message = "update docs and reports"
+        }
     }
 }
