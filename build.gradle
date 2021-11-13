@@ -46,7 +46,7 @@ task reports(dependsOn: ['javadoc', 'check', 'test']){
     description 'generates reports'
 }
 
-/*
+
 task clonePages(dependsOn: 'reports'){
     doLast {
         mkdir 'build/gh-pages'
@@ -60,6 +60,9 @@ task clonePages(dependsOn: 'reports'){
             uri = 'file:' + thisRepo
             bare = false
             refToCheckout = 'gh-pages'
+        }
+        grgit.checkout {
+            branch = 'gh-pages'
         }
     }
 }
@@ -93,4 +96,3 @@ task deployReports (dependsOn: ['copyReports', 'copyDocs']){
 }
 
 build.dependsOn deployReports
-*/

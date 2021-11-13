@@ -2,7 +2,7 @@ name: CI - build and test
 
 on:
   push:
-    branches: [ main, gh-pages ]
+    branches: [ main ]
 
 jobs:
   build:
