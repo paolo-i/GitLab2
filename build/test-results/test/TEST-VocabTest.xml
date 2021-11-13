@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="VocabTest" tests="3" skipped="0" failures="1" errors="0" timestamp="2021-11-13T17:15:16" hostname="arch" time="0.014">
+<testsuite name="VocabTest" tests="3" skipped="0" failures="1" errors="0" timestamp="2021-11-13T17:16:19" hostname="arch" time="0.019">
   <properties/>
-  <testcase name="testAddWordPair()" classname="VocabTest" time="0.013">
+  <testcase name="testAddWordPair()" classname="VocabTest" time="0.017">
     <failure message="java.lang.AssertionError: &#10;Expected: is &lt;5&gt;&#10;     but: was &lt;4&gt;" type="java.lang.AssertionError">java.lang.AssertionError: 
 Expected: is &lt;5&gt;
      but: was &lt;4&gt;
@@ -98,8 +98,8 @@ Expected: is &lt;5&gt;
 	at java.base/java.lang.Thread.run(Thread.java:829)
 </failure>
   </testcase>
-  <testcase name="testConstructor()" classname="VocabTest" time="0.0"/>
-  <testcase name="testAddStartingWord()" classname="VocabTest" time="0.0"/>
+  <testcase name="testConstructor()" classname="VocabTest" time="0.001"/>
+  <testcase name="testAddStartingWord()" classname="VocabTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
