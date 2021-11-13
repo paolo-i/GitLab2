@@ -51,10 +51,10 @@ task clonePages(){
         mkdir 'build/gh-pages'
         def thisRepo = rootProject.projectDir.toString()
         def pagesDir = "$buildDir/gh-pages"
-        project.delete{
-            pagesDir
+        project.delete {
+            delete pagesDir
         }
-        def grgit = git.clone{
+        def grgit = git.clone {
             dir = pagesDir
             uri = 'file:' + thisRepo
             bare = false
@@ -66,21 +66,25 @@ task clonePages(){
     }
 }
 
+
 task copyReports (type: Copy, dependsOn: ['clonePages', 'reports']){
-    from "$buildDir/docs"
-    into "$buildDir/gh-pages/docs"
+    mkdir "$buildDir/gh-pages/reports"
     from "$buildDir/reports"
     into "$buildDir/gh-pages/reports"
 }
 
-task deployReports (dependsOn: 'copyReports'){
+task copyDocs(type: Copy, dependsOn: copyReports){
+    mkdir "$buildDir/gh-pages/docs"
+    from "$buildDir/docs"
+    into "$buildDir/gh-pages/docs"
+}
+
+task deployReports (dependsOn: ['copyReports', 'copyDocs']){
     group = "Reporting"
     doLast{
         def pagesDir = "$buildDir/gh-pages"
         def grgit = git.open {
             dir = pagesDir + "/.git"
         }
-        grgit.add (update: true, patterns: ['build/docs/'])
-        grgit.add (update: true, patterns: ['build/reports/'])
     }
 }
