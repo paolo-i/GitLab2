@@ -46,6 +46,7 @@ task reports(dependsOn: ['javadoc', 'check', 'test']){
     description 'generates reports'
 }
 
+/*
 task clonePages(dependsOn: 'reports'){
     doLast {
         mkdir 'build/gh-pages'
@@ -65,13 +66,10 @@ task clonePages(dependsOn: 'reports'){
 
 
 task copyReports (type: Copy, dependsOn: 'clonePages'){
-    mkdir "$buildDir/gh-pages/reports"
     from "$buildDir/reports"
     into "$buildDir/gh-pages/reports"
-}
 
-task copyDocs(type: Copy, dependsOn: copyReports){
-    mkdir "$buildDir/gh-pages/docs"
+
     from "$buildDir/docs"
     into "$buildDir/gh-pages/docs"
 }
@@ -95,3 +93,4 @@ task deployReports (dependsOn: ['copyReports', 'copyDocs']){
 }
 
 build.dependsOn deployReports
+*/
