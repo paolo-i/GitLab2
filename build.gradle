@@ -69,7 +69,6 @@ task copyReports (type: Copy, dependsOn: 'clonePages'){
     from "$buildDir/reports"
     into "$buildDir/gh-pages/reports"
 
-
     from "$buildDir/docs"
     into "$buildDir/gh-pages/docs"
 }
