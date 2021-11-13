@@ -27,7 +27,6 @@ hs_err_pid*
 .vscode/*
 
 # generated gradle directories
-build
 bin
 .gradle
 

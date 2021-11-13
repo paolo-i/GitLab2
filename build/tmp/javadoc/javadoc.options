@@ -1,0 +1,7 @@
+-d '/home/pi/schoolAssignments/cs350/GitLab2/build/docs/javadoc'
+-doctitle 'GitLab2 API'
+-notimestamp 
+-quiet 
+-windowtitle 'GitLab2 API'
+'/home/pi/schoolAssignments/cs350/GitLab2/src/main/java/Vocabulary.java'
+'/home/pi/schoolAssignments/cs350/GitLab2/src/main/java/Author.java'
