@@ -1,7 +1,7 @@
 plugins {
 id 'java'
 id 'project-report'
-id "org.xbib.gradle.plugin.git" version "2.0.0"
+id "org.ajoberstar.grgit" version "4.1.0"
 }
 
 java {
