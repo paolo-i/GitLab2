@@ -36,3 +36,6 @@ bin
 .project
 .settings
 .classpath
+
+# txt file
+project.txt
