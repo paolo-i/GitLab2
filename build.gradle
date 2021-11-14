@@ -50,7 +50,7 @@ task reports(dependsOn: ['javadoc', 'check', 'test']){
 task clonePages(dependsOn: 'reports') {
     doLast {
         mkdir 'build/gh-pages'
-        def thisRepo = rootProject.projectDir.toString()
+        def thisRepo = "https://github.com/paolo-i/GitLab2"
         def pagesDir = "$buildDir/gh-pages"
         project.delete {
             delete pagesDir
