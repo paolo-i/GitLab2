@@ -62,6 +62,7 @@ task clonePages(dependsOn: 'reports') {
             refToCheckout = 'gh-pages'
         }
         grgit.checkout {
+            src = thisRepo
             branch = 'gh-pages'
         }
     }
