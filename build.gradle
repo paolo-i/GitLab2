@@ -57,7 +57,7 @@ task clonePages(dependsOn: 'reports') {
         }
         def grgit = git.clone {
             dir = pagesDir
-            uri = 'file' + thisRepo
+            uri = 'file:' + thisRepo
             bare = false
             refToCheckout = 'gh-pages'
         }
