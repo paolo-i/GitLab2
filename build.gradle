@@ -47,7 +47,7 @@ task reports(dependsOn: ['javadoc', 'check', 'test']){
 }
 
 
-task clonePages(dependsOn: 'reports') {
+task clonePages() {
     doLast {
         mkdir 'build/gh-pages'
         def thisRepo = rootProject.projectDir.toString()
@@ -55,11 +55,10 @@ task clonePages(dependsOn: 'reports') {
         project.delete {
             delete pagesDir
         }
-        def grgit = grgit.clone {
+        def grgit = git.clone {
             dir = pagesDir
             uri = 'file:' + thisRepo
             bare = false
-            checkout = true
             refToCheckout = 'gh-pages'
         }
         grgit.checkout {
@@ -67,8 +66,7 @@ task clonePages(dependsOn: 'reports') {
         }
     }
 }
-
-task copyReports (type: Copy, dependsOn: 'clonePages') {
+task copyReports (type: Copy, dependsOn: ['clonePages', 'reports']) {
     from "$buildDir/reports"
     into "$buildDir/gh-pages/reports"
 }
