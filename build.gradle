@@ -55,14 +55,14 @@ task clonePages(dependsOn: 'reports') {
         project.delete {
             delete pagesDir
         }
-        def grgit = git.clone {
+        def grgit = grgit.clone {
             dir = pagesDir
             uri = 'file:' + thisRepo
             bare = false
+            checkout = true
             refToCheckout = 'gh-pages'
         }
         grgit.checkout {
-            src = thisRepo
             branch = 'gh-pages'
         }
     }
