@@ -47,7 +47,7 @@ task reports(dependsOn: ['javadoc', 'check', 'test']){
 }
 
 
-task clonePages(dependsOn: reports) {
+task clonePages(dependsOn: 'reports') {
     doLast {
         mkdir 'build/gh-pages'
         def thisRepo = rootProject.projectDir.toString()
@@ -77,7 +77,7 @@ task copyDocs(type: Copy, dependsOn: 'copyReports'){
     into "$buildDir/gh-pages/docs"
 }
 
-task deployReports (dependsOn: 'copyReports') {
+task deployReports (dependsOn: 'copyDocs' ) {
     group = "Reporting"
     description  'Copies reports to the gh-pages branch in preparation for a future push to GitHub'
     doLast {
@@ -95,5 +95,3 @@ task deployReports (dependsOn: 'copyReports') {
         grgit.push {}
     }
 }
-
-build.dependsOn deployReports
