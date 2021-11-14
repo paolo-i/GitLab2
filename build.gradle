@@ -47,7 +47,7 @@ task reports(dependsOn: ['javadoc', 'check', 'test']){
 }
 
 
-task clonePages(dependsOn: 'reports') {
+/*task clonePages(dependsOn: 'reports') {
     doLast {
         mkdir 'build/gh-pages'
         def thisRepo = rootProject.projectDir.toString()
@@ -93,4 +93,4 @@ task deployReports (dependsOn: 'copyDocs' ) {
         }
         grgit.push {}
     }
-}
+}*/
