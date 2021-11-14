@@ -47,7 +47,7 @@ task reports(dependsOn: ['javadoc', 'check', 'test']){
 }
 
 
-task clonePages() {
+task clonePages(dependsOn: 'reports') {
     doLast {
         mkdir 'build/gh-pages'
         def thisRepo = rootProject.projectDir.toString()
@@ -66,7 +66,7 @@ task clonePages() {
         }
     }
 }
-task copyReports (type: Copy, dependsOn: ['clonePages', 'reports']) {
+task copyReports (type: Copy, dependsOn: 'clonePages') {
     from "$buildDir/reports"
     into "$buildDir/gh-pages/reports"
 }
